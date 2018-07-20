@@ -129,7 +129,7 @@ data.frame(
 
 For a shortcut you could try `ctrl + shift + d`.
 
-## Outputting data from your R evironment
+## Outputting data from your R environment
 
 ### Output to R with `dpasta()`
 All of the above addin functions can be called directly with an R object argument. When run, this will result in the object being output at the current cursor. Usually the next line. To make things more magical, a there is a single function `dpasta` that will match the argument with the appropriate `_paste()` function based on its class. This means:
@@ -203,11 +203,11 @@ Will paste the following on the clipboard:
 # Usage without RStudio
 The `rstudioapi` package enables the calling of addins and output to the cursor. If the API is not detected, all the `_paste()` functions, and `dpasta` will output their text to the console, ready for copying and pasting to an editor window.
 
-In this scenario you may wish to avoid installation of the `rstudioapi` package dependency. Use `install.packages("datapsata", dependencies = "Depends")` to avoid API installation, but be sure to follow up with `install.packages(c("readr","clipr"))`. 
+In this scenario you may wish to avoid installation of the `rstudioapi` package dependency. Use `install.packages("datapasta", dependencies = "Depends")` to avoid API installation, but be sure to follow up with `install.packages(c("readr","clipr"))`. 
 
 *note:* The `dpasta()` function can be used without `clipr` installed, but you're missing out on a fair amount of awesomeness if you limit yourself to that.
 
-## Custom Behaviour for Your Unique Slowflake Setup
+## Custom Behaviour for Your Unique Snowflake Setup
 
 Custom behaviour can be created by taking advantage of the `_construct()` variants of the `_paste()` functions, as these return their output as an R object which can then be written to an appropriate buffer or clipboard.
 
@@ -229,7 +229,7 @@ clipr::write_clip(trib_call) #Send it back to the clipboard.
 ## Upping the row guard
 For your protection, `datapasta` will initially refuse to output R objects of 200 or more rows. Up the row limit for your specific scenario with `dp_set_max_rows(n)`. Large numbers of rows could take a long time to format. In extreme cases you could crash your R/RStudio session.
 
-## Deailing with "," decimal marks
+## Dealing with "," decimal marks
 Use `dp_set_decimal_mark(",")` to handle numbers like `3,14`.
 
 
